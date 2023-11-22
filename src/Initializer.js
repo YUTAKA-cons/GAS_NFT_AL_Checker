@@ -23,13 +23,13 @@ function onOpen() {
 		sheet.getRange(1, headerCol).setValue("datetime");
 		headerCol += 1;
 
-		sheet.getRange(1, headerCol).setValue("Provider");
+		sheet.getRange(1, headerCol).setValue(provider);
 		headerCol += 1;
 
-		sheet.getRange(1, headerCol).setValue("Discord ID");
+		sheet.getRange(1, headerCol).setValue(discordId);
 		headerCol += 1;
 
-		sheet.getRange(1, headerCol).setValue("Wallet Address");
+		sheet.getRange(1, headerCol).setValue(walletAddress);
 		sheet.setColumnWidth(headerCol, 300);
 		headerCol += 1;
 
@@ -56,7 +56,10 @@ function onOpen() {
 		ss.insertSheet();
 		let sheet3 = SpreadsheetApp.getActiveSheet();
 		sheet3.setName(formSheet);
-		sheet3.getRange("A1").setValue("Form Title");
+		sheet3.getRange("A2").setValue("Form Title");
+		sheet3.getRange("A3").setValue("Form Description");
+		sheet3.getRange("A4").setValue("Form URL");
+		sheet3.getRange("A5").setValue("配布先");
 
 		// Property設定
 		PropertiesService.getScriptProperties().setProperty("initFlag", false);
